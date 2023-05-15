@@ -3,3 +3,4 @@
 - Tailwind CSS
 - MongoDB
 - Express.js
+- Contains Carousel (+ CSS)

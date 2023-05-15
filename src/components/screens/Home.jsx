@@ -2,15 +2,21 @@ import React, { useState } from 'react'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
 import Card from '../Card'
+import Carousel from '../Carousel'
 
 const Home = () => {
   return (
-    <div>
-      <div>
+    <div className="">
+      <div className="fixed top-0 left-0 w-full z-50" >
         <Navbar />
-        {/* //TODO: MAIN STARTS */}
+      </div>
+      <div className='mt-20'>
+        <Carousel />{' '}
+      </div>
+      <div>
         <Card />
-        {/* //TODO: MAIN ENDS */}
+      </div>
+      <div className="bottom-0 left-0 w-full">
         <Footer />
       </div>
     </div>

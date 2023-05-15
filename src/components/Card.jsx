@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+// 'https://images.pexels.com/photos/835752/pexels-photo-835752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+// 'https://images.pexels.com/photos/9469653/pexels-photo-9469653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 const Card = () => {
   const [quantity, setQuantity] = useState(1)
   const [color, setColor] = useState('red')
@@ -17,11 +19,12 @@ const Card = () => {
     <div className="max-w-xs rounded overflow-hidden shadow-lg m-5">
       <img
         className="w-full h-64 object-cover"
-        src="https://via.placeholder.com/640x360.png?text=Product+Image"
+        src="https://images.pexels.com/photos/9469653/pexels-photo-9469653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt="Product"
       />
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">Product Name</div>
+        <div className="font-bold text-xl">Product Name</div>
+        <div className="font-semibold text-sm mb-2">Price: 180/-</div>
         <div className="flex mb-2">
           <label htmlFor="quantity" className="mr-2">
             Quantity:
@@ -57,9 +60,8 @@ const Card = () => {
             onChange={handleColorChange}
             className="border rounded px-2 py-1"
           >
-            <option value="red">Red</option>
-            <option value="blue">Blue</option>
-            <option value="green">Green</option>
+            <option value="half">Half</option>
+            <option value="full">Full</option>
           </select>
         </div>
         <button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-3 mt-2 text-center">

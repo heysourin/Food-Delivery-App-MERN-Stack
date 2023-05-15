@@ -2,6 +2,7 @@ import "./App.css";
 import Home from "./components/screens/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/screens/Login";
+import Footer from "./components/Footer";
 
 function App() {
   return (

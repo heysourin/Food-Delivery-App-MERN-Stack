@@ -1,0 +1,5 @@
+- How to connect mongodb atlas to node.js?
+    1. go to connect with drivers
+    2. do the required installations
+    3. mongodb+srv://rylephoenix:eZYNTiSaCnDQEIYf@cluster1.siovoyw.mongodb.net/FoodOP?retryWrites=true&w=majority
+    4. Notice pt 3, have to replace the password and have to add database name before '?'. (here: FoodOP)

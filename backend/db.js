@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
-//  const mongoURI = "mongodb://localhost:27017/FoodOP";
 const mongoURI =
-  "mongodb+srv://rylephoenix:eZYNTiSaCnDQEIYf@cluster1.siovoyw.mongodb.net/FoodOP?retryWrites=true&w=majority";
+  "mongodb+srv://rylephoenix:4j1Ii1TTZyyddaAQ@cluster0.t6gyzjr.mongodb.net/FoodOP?retryWrites=true&w=majority";
 
 const mongoDB = async () => {
   try {
     await mongoose.connect(mongoURI, { useNewUrlParser: true });
-    console.log(`Connected to ${mongoURI}`);
-    
-    const fetchedData = await mongoose.connection.db.collection("foodCategory");
+    console.log(`Connected to mongoURI`);
+
+    const fetchedData = await mongoose.connection.db.collection("users");
     const data = await fetchedData.find({}).toArray();
+    // console.log(fetchedData);
     console.log(data);
   } catch (err) {
     console.log("Error", err);
@@ -17,6 +17,9 @@ const mongoDB = async () => {
 };
 
 module.exports = mongoDB;
+
+
+
 
 // const mongoDB = async () => {
 //   await mongoose.connect(
@@ -35,3 +38,5 @@ module.exports = mongoDB;
 //     }
 //   );
 // };
+
+// 4j1Ii1TTZyyddaAQ

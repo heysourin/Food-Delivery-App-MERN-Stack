@@ -3,3 +3,15 @@
     2. do the required installations
     3. mongodb+srv://rylephoenix:eZYNTiSaCnDQEIYf@cluster1.siovoyw.mongodb.net/FoodOP?retryWrites=true&w=majority
     4. Notice pt 3, have to replace the password and have to add database name before '?'. (here: FoodOP)
+
+
+
+- Schema & User.js
+    1. Go to backend/model/User.js
+    2. Schema have to be imported from mongoose
+    3. Notice how we can create a collection in the database and put data inside it using schema, mongoose, express.
+    4. Files involved: User.js, CreateUser.js, index.js
+
+
+
+4j1Ii1TTZyyddaAQ

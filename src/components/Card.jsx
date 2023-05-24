@@ -4,17 +4,18 @@ import React, { useState } from 'react'
 // 'https://images.pexels.com/photos/9469653/pexels-photo-9469653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 const Card = () => {
   const [quantity, setQuantity] = useState(1)
-  const [color, setColor] = useState('red')
+  const [halfOrFull, setHalfOrFull] = useState('red')
 
   const handleQuantityChange = (event) => {
     setQuantity(event.target.value)
     console.log(event.target.value)
   }
 
-  const handleColorChange = (event) => {
-    setColor(event.target.value)
+  const handleHalfOrFull = (event) => {
+    setHalfOrFull(event.target.value)
     console.log(event.target.value)
   }
+
   return (
     <div className="max-w-xs rounded overflow-hidden shadow-lg m-5">
       <img
@@ -50,14 +51,14 @@ const Card = () => {
           </select>
         </div>
         <div className="flex mb-2">
-          <label htmlFor="color" className="mr-2">
-            Color:
+          <label htmlFor="halfOrFull" className="mt-2 mr-2">
+            Half/ Full:
           </label>
           <select
-            name="color"
-            id="color"
-            value={color}
-            onChange={handleColorChange}
+            name="halfOrFull"
+            id="halfOrFull"
+            value={halfOrFull}
+            onChange={handleHalfOrFull}
             className="border rounded px-2 py-1"
           >
             <option value="half">Half</option>

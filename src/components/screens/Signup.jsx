@@ -16,6 +16,14 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     // Add your form submission logic here
+    console.log(
+      JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+        location: formData.location,
+      }),
+    )
     const response = await fetch('http://localhost:5000/api/createuser', {
       method: 'POST',
       headers: {

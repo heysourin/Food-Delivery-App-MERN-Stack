@@ -7,19 +7,28 @@ const mongoDB = async () => {
     await mongoose.connect(mongoURI, { useNewUrlParser: true });
     console.log(`Connected to mongoURI`);
 
-    const fetchedData = await mongoose.connection.db.collection("users");
-    const data = await fetchedData.find({}).toArray();
+    const fetchedData = await mongoose.connection.db.collection("foodData");
+    fetchedData.find({}).toArray(async function (err, data) {
+      const foodCategory = await mongoose.connection.db.collection(
+        "foodCategory"
+      );
+      foodCategory.find({}).toArray(function (err, catData) {
+        if (err) console.log(err);
+        else {
+          global.foodData = data;
+          global.foodCategory = catData;
+        }
+      });
+    });
     // console.log(fetchedData);
-    console.log(data);
+    // console.log(data);
+    console.log(" DB Connected");
   } catch (err) {
     console.log("Error", err);
   }
 };
 
 module.exports = mongoDB;
-
-
-
 
 // const mongoDB = async () => {
 //   await mongoose.connect(

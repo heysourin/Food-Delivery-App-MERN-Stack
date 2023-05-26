@@ -35,29 +35,39 @@ const Home = () => {
       <div className="mt-20">
         <Carousel />{' '}
       </div>
-      <div>
-        {foodCat !== [] ? (
+      <div className="flex flex-col">
+        {foodCat.length !== 0 ? (
           foodCat.map((data) => {
             return (
-              <>
-                <div key={data._id}>{data.CategoryName}</div>
+              <React.Fragment key={data._id}>
+                <div>{data.CategoryName}</div>
                 <hr />
-                <div>
-                  {
-                    foodItem!==[]?(
-                      <div>
-                        lsdfyu
-                      </div>
-                    ):(<div>No such data</div>)
-                  }
+                <div className="flex flex-row">
+                  {foodItem.length !== 0 ? (
+                    foodItem
+                      .filter((item) => item.CategoryName === data.CategoryName)
+                      .map((filterItems) => {
+                        return (
+                          <div key={filterItems._id}>
+                            <Card
+                              img={filterItems.img}
+                              name={filterItems.name}
+                            />
+                          </div>
+                        )
+                      })
+                  ) : (
+                    <div>No such data</div>
+                  )}
                 </div>
-              </>
+              </React.Fragment>
             )
           })
         ) : (
           <div>wtf</div>
         )}
-        <Card />
+
+        {/* <Card /> */}
       </div>
       <div className="bottom-0 left-0 w-full">
         <Footer />
